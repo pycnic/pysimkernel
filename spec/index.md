@@ -38,7 +38,7 @@ the means of a decorator and a serial or concurrent task scheduler), and on a
 cluster with Jug or similar parallelization frameworks (by the means of a
 central simulation control script).
 
-![](simulation-layers.svg)
+![](simulation-layers.png)
 
 ### Data type
 
@@ -106,7 +106,7 @@ This is again just the reduce function.
 
 ### The task graph
 
-![](task-graph.svg)
+![](task-graph.png)
 
 A sample task graph for a multi-run experiment with multiple (2) tasks per job
 and multiple (2) runs per task, and two sets of input parameters, leading to
@@ -114,7 +114,7 @@ and multiple (2) runs per task, and two sets of input parameters, leading to
 
 ### The reduced task graph
 
-![](reduced-task-graph.svg)
+![](reduced-task-graph.png)
 
 A reduced version of the task graph.
 These are the task that are actually up for external scheduling, as the
