@@ -128,8 +128,8 @@ E_basin_scaling = Experiment(E_onesize.run, input_generator = lambda x:x)
 E_basin_scaling.run(param = np.arange(min_size, max_size, 10))
 ```
 OK. So this design can do hierarchical experiments. But let's see how it works in some other scenario, for sake of being thorough:
+
 ## Design used in another test case: find out the critical coupling of a kuramoto network
-<a name="abcd"></a>
 ```python
 def order_param(Network, initcond):
     """Computes the order parameter by simulating the network from given initial condition"""
