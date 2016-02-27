@@ -149,7 +149,4 @@ E_orderparam_scaling = Experiment(E_one_k.run, input_generator =\
 E_orderparam_scaling.run((0, 1))
 ```
 
-## Problems:
-1. It is plain ugly how we [link text](#abcd). 
-
 
