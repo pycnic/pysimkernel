@@ -47,6 +47,7 @@ basin_scaling_with_size = Experiment(basin_all_omegas_for_single_size, n_range \
 
 ### Advantages:
 -  Completely Hierarchichal
+
 ### Disadvantages:
 -  Fill it in!
 
@@ -128,6 +129,7 @@ E_basin_scaling.run(param = np.arange(min_size, max_size, 10))
 ```
 OK. So this design can do hierarchical experiments. But let's see how it works in some other scenario, for sake of being thorough:
 ## Design used in another test case: find out the critical coupling of a kuramoto network
+<a name="abcd"></a>
 ```python
 def order_param(Network, initcond):
     """Computes the order parameter by simulating the network from given initial condition"""
@@ -136,7 +138,7 @@ def generate_initconds(nrepeat):
     """
     generates args for func:`order_param`
     """
-    <a name="ugly"></a>
+    
     G = nx.Graph()
     # code to set up your graph here
     for thetas in np.random.uniform(0, 2*pi, size = nrepeat):
@@ -148,6 +150,6 @@ E_orderparam_scaling.run((0, 1))
 ```
 
 ## Problems:
-1. It is plain ugly how we [link text](#ugly). 
+1. It is plain ugly how we [link text](#abcd). 
 
 
