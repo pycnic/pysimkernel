@@ -5,14 +5,22 @@
 A Kuramoto network $$F$$ is completely specified by it's graph topology $$G(V, E)$$ and its set of natural frequencies $$\vec{\omega})$$ for all the nodes. Here we are only intersted in ring topology. All fixed points of a Kuramoto ring are uniquely identified by an integer called the **winding number** $$k$$. 
 
 ## Study:
-We are interested in the probability that a random initial condition evolves to the steady state with $$k = k'$$, i.e. $$V_{k, N} = P(k | len(V) = N)$$. And we want this over all possible distributions of natural frequencies $\vec{\omega}$ (subject to some constraints, that make it a finite space). 
+We are interested in the probability that a random initial condition evolves to the steady state with $$k = k'$$, i.e. $$V_{k, N} = P(k | len(V) = N)$$. And we want this over all possible distributions of natural frequencies $\vec{\omega}$ (subject to some constraints, that make it a finite space). Then we want to compute it over a range of $$N$$ values to obtain the scaling behaviour of the same. 
 
 ## Sequential pseudocode would be:
 ```python
+def find_k(N, omega, initcond):
+    """
+    Simulates an N ring kuramoto network with natural frequencies
+    omega from initcond untill the dynamics converges. 
+
+    Returns the winding number of the steady state. 
+    """
+
 N_range = np.arange(10,100)
 V = []
 
-# Outermost loop: obver many ring sizes
+# Outermost loop: over many ring sizes
 for N in N_range:
     V_N = 0
     # loop over all omega combinations
