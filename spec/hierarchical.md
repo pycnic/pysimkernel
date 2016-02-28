@@ -140,17 +140,18 @@ OK. So this design can do hierarchical experiments. But let's see how it works i
 def order_param(Network, initcond):
     """Computes the order parameter by simulating the network from given initial condition"""
     pass
-def generate_initconds(nrepeat):
+def generate_order_param_args(coupling, nrepeat):
     """
     generates args for func:`order_param`
     """
     G = nx.Graph()
     # code to set up your graph here
+    for u,v in G.edges():
+        G[u][v]['weight'] = coupling
     for thetas in np.random.uniform(0, 2*pi, size = nrepeat):
         yield G, thetas
-E_one_k = Experiment(order_param, input_generator = generate_initconds, input_generator_args = (1000,))
-E_orderparam_scaling = Experiment(E_one_k.run, input_generator =\
+E_one_coupling = Experiment(order_param, input_generator = generate_initconds, input_generator_args = (1000,))
+E_orderparam_scaling = Experiment(E_one_coupling.run, input_generator =\
                                 lambda mink, maxk: np.arange(mink, maxk, (maxk - mink)/100))
 E_orderparam_scaling.run((0, 1))
 ```
-
